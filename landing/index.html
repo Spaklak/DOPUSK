@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3F2EC">
+  <meta name="description" content="Допуск — локальный MCP-шлюз для аналитиков и команд. ИИ помогает с анализом, а вы определяете доступные операции и проверяете результаты перед передачей в облако.">
+  <title>Допуск — контролируемый доступ ИИ к данным</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="masthead wrap">
+    <a class="brand" href="#main" aria-label="Допуск — к началу страницы">
+      <img src="assets/mark.svg" width="34" height="32" alt="">
+      Допуск
+    </a>
+    <nav aria-label="Навигация по странице">
+      <a href="#workflow">Как это работает</a>
+      <a href="#example">Кейс<span aria-hidden="true"> ↘</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title"><span>Ваш ИИ-помощник.</span> <span>Ваши данные.</span> <span>Ваши правила доступа.</span></h1>
+        <p class="hero-intro">«Допуск» помогает аналитикам работать с облачным ИИ. Локальный шлюз контролирует, что агент может сделать с данными и какой ответ получит.</p>
+        <div class="application">
+          <button class="apply" type="button" aria-describedby="hero-status">Оставить заявку на тестирование<span aria-hidden="true">↗</span></button>
+          <p class="form-status" id="hero-status" role="status"></p>
+        </div>
+      </div>
+      <figure class="diagram">
+        <div class="diagram-heading">Как связаны агент и данные</div>
+        <img src="assets/gateway.svg" width="600" height="326" alt="Двусторонний обмен между облачным агентом и локальной средой проходит через шлюз «Допуск».">
+        <figcaption class="diagram-labels">
+          <span>ИИ-агент</span>
+          <strong>Допуск<small>MCP-шлюз</small></strong>
+          <span>Локальные<br>инструменты и данные</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="task wrap split" aria-labelledby="task-title">
+      <h2 id="task-title">Что мешает поручить ИИ анализ клиентской базы?</h2>
+      <div class="reading">
+        <p>В рабочей таблице рядом с историей заказов лежат имена и контакты клиентов. Если правила компании запрещают передавать эти записи в облако, аналитик сам собирает сводку для ИИ. Стоит агенту предложить разбивку по тарифам, и сводку приходится готовить заново.</p>
+        <p>С «Допуском» эти расчёты можно поручить ИИ. Агент вызывает разрешённые инструменты прямо в рабочей среде аналитика. Исходные записи остаются у компании, а «Допуск» проверяет, какие результаты можно вернуть агенту для следующего шага.</p>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <h2 id="workflow-title">Как работает «Допуск»</h2>
+        <ol class="steps">
+          <li>
+            <svg class="step-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 10h13m8 0h9M5 20h4m8 0h18M5 30h17m8 0h5"/><circle cx="22" cy="10" r="4"/><circle cx="13" cy="20" r="4"/><circle cx="26" cy="30" r="4"/></svg>
+            <h3>Проверка разрешений</h3>
+            <p>Агент запрашивает операцию. Шлюз сверяет её с правилами доступа, которые задала команда.</p>
+          </li>
+          <li>
+            <svg class="step-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="6" width="32" height="26" rx="3"/><path d="m10 14 5 5-5 5m9 0h8M15 36h10"/></svg>
+            <h3>Локальный расчёт</h3>
+            <p>Разрешённый инструмент выполняет расчёт в рабочей среде аналитика. Исходная таблица остаётся там же.</p>
+          </li>
+          <li>
+            <svg class="step-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="m20 3 13 5v10c0 8-5 14-13 19C12 32 7 26 7 18V8Z"/><path d="m13 19 5 5 10-11"/></svg>
+            <h3>Проверка результата</h3>
+            <p>Перед передачей шлюз проверяет результат по правилам команды. При необходимости аналитик подтверждает отправку.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="example wrap" id="example" aria-labelledby="example-title">
+      <h2 id="example-title">Кейс подписочного сервиса</h2>
+      <p class="case-intro">Команда решает, стоит ли тестировать напоминание о повторной оплате. Сначала нужно понять, чаще ли клиенты отменяют подписку после неудачного платежа. История платежей и отмен хранится внутри компании.</p>
+      <div class="example-details">
+        <div>
+          <h3><small lang="en">As is</small> Аналитик готовит сводку вручную</h3>
+          <ol>
+            <li>Аналитик связывает платежи с отменами и делит клиентов на две группы по результату первой попытки продления.</li>
+            <li>Для каждой группы он считает долю отмен за следующие 30 дней. Проверяет, что в сводке остались только итоговые показатели, и передаёт её агенту для сравнения.</li>
+            <li>Команда просит разбивку по тарифам. Аналитик меняет запрос, пересчитывает показатели и готовит новую сводку.</li>
+          </ol>
+        </div>
+        <div>
+          <h3><small lang="en">To be</small> Агент запрашивает расчёт через «Допуск»</h3>
+          <ol>
+            <li>По просьбе аналитика агент отправляет через MCP команду посчитать долю отмен. В параметрах указывает период в 30 дней и группировку по результату платежа.</li>
+            <li>«Допуск» проверяет параметры команды и право на вызов инструмента. Если проверка пройдена, шлюз запускает расчёт локально. Некорректную или запрещённую команду он отклоняет.</li>
+            <li>«Допуск» проверяет результат и возвращает агенту две доли отмен. Для разбивки по тарифам агент отправляет новую команду, которая проходит ту же проверку.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="case-outcome">
+        <h3>После сбоя оплаты подписку отменяли втрое чаще</h3>
+        <p>В этом учебном примере за 30 дней подписку отменили 12% клиентов, у которых не прошёл первый платёж, и 4% тех, у кого он прошёл сразу.</p>
+        <p><strong>Команда решила протестировать напоминание.</strong> Половине клиентов после сбоя отправят ссылку на повторную оплату. Через 30 дней сравнят долю отмен в обеих группах. Если напоминание снизит отток, его включат для всех клиентов со сбоем оплаты.</p>
+        <p><strong>Выгода для бизнеса — от вопроса до решения за 10–15 минут.</strong> По оценке для этого кейса, ручная подготовка сводки с уточнениями заняла бы 2–3 дня. С «Допуском» команда может выбрать эксперимент уже на той встрече, где возник вопрос.</p>
+      </div>
+    </section>
+
+    <section class="signup wrap" aria-labelledby="signup-title">
+      <div>
+        <h2 id="signup-title">Попробуйте «Допуск»<br>на своей задаче</h2>
+        <p>Приглашаем аналитиков и команды оставить заявку на тестирование.</p>
+      </div>
+      <div class="application">
+        <button class="apply" type="button" aria-describedby="signup-status">Оставить заявку на тестирование<span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="signup-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

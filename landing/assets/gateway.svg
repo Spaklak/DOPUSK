@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 326" fill="none">
+  <defs>
+    <pattern id="grid" width="48" height="25" patternUnits="userSpaceOnUse">
+      <path d="m0 0 48 25m0-25L0 25" stroke="#496053" stroke-opacity=".13" stroke-width=".7"/>
+    </pattern>
+    <radialGradient id="fade">
+      <stop offset=".4" stop-color="white"/>
+      <stop offset="1" stop-color="black"/>
+    </radialGradient>
+    <mask id="plane"><ellipse cx="300" cy="173" rx="320" ry="149" fill="url(#fade)"/></mask>
+    <linearGradient id="lid" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#F3F2EC"/><stop offset="1" stop-color="#A8BDAC"/>
+    </linearGradient>
+    <g id="layer" stroke="#34443B" stroke-width="1.35" stroke-linejoin="round">
+      <path d="m0 0 96-50L192 0 96 50Z" fill="#B8CABD"/>
+      <path d="m0 0 96 50v8L0 8Z" fill="#91A89A"/>
+      <path d="m96 50 96-50v8L96 58Z" fill="#697E70"/>
+    </g>
+    <g id="server" stroke="#34443B" stroke-width="1.35" stroke-linejoin="round">
+      <path d="m0 0 34-18L79 5 45 23Z" fill="#D9E2D8"/>
+      <path d="m0 0 45 23v10L0 10Z" fill="#B9CABB"/>
+      <path d="M45 23 79 5v10L45 33Z" fill="#91A89A"/>
+      <path d="m6 8 8 4m3 1.5 6 3" stroke="#475F4F"/>
+    </g>
+  </defs>
+  <path fill="url(#grid)" mask="url(#plane)" d="M0 0h600v326H0z"/>
+  <!-- The two traces carry a request and its checked response. -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="m95 225 55 29 94-49v-26m91 12 81-42 37 19 49-26" stroke="#536C5C" stroke-width="2.6"/>
+    <path d="m95 236 55 29 106-55v-25m79 17 81-42 37 19 49-26" stroke="#849A89" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <path d="m183 234 8-1-4 7m246-83 7 4-7 2" stroke="#34483C" stroke-width="2"/>
+  </g>
+  <!-- Central gateway, with the brand mark on the top plate. -->
+  <path d="m195 176 105-55 105 55-105 55Z" fill="#415847" opacity=".12"/>
+  <use href="#layer" x="204" y="164"/>
+  <use href="#layer" x="204" y="151"/>
+  <use href="#layer" x="204" y="138"/>
+  <use href="#layer" x="204" y="125"/>
+  <g stroke="#34443B" stroke-width="1.5" stroke-linejoin="round">
+    <path d="m204 108 96-50 96 50-96 50Z" fill="url(#lid)"/>
+    <path d="m204 108 96 50v10l-96-50Z" fill="#A1B5A6"/>
+    <path d="m300 158 96-50v10l-96 50Z" fill="#6E8675"/>
+    <path d="m216 108 84-44 84 44-84 44Z" stroke-opacity=".42" stroke-width=".9"/>
+  </g>
+  <path transform="matrix(.30 .156 -.30 .156 298.2 79.3)" fill="#25392C" d="M62 0h88c23 0 40 18 40 42v136h-82v-38h38V41H83l-41 70v29h44v38H0v-73z"/>
+  <g fill="#E0EADF"><circle cx="319" cy="200" r="2"/><circle cx="326" cy="196.5" r="2"/></g>
+  <!-- Agent terminal and the local data store. -->
+  <g stroke="#34443B" stroke-width="1.5" stroke-linejoin="round">
+    <path d="m47 226 32-17 54 28-32 17Z" fill="#CBD7CC"/>
+    <path d="m47 226 54 28v5l-54-28Z" fill="#A7BBAA"/>
+    <path d="m101 254 32-17v5l-32 17Z" fill="#91A89A"/>
+    <path d="m58 173 7-4 60 31-7 4Z" fill="#A7BBAA"/>
+    <path d="m118 204 7-4v38l-7 4Z" fill="#849B89"/>
+    <path d="m58 173 60 31v38l-60-31Z" fill="#E6EBE3"/>
+    <path d="m65 184 46 24v22l-46-24Z" fill="#34483C" stroke="none"/>
+    <path d="m72 193 5 5-5 1m10 3 7 4" stroke="#D8E8D9" stroke-linecap="round"/>
+  </g>
+  <use href="#server" x="465" y="155"/>
+  <use href="#server" x="465" y="140"/>
+  <use href="#server" x="465" y="125"/>
+  <g stroke="#738A78" stroke-dasharray="3 5" stroke-linecap="round">
+    <path d="M91 263v40m209-73v73m205-118v118"/>
+  </g>
+  <g fill="#536B5A"><circle cx="91" cy="305" r="2.8"/><circle cx="300" cy="305" r="2.8"/><circle cx="505" cy="305" r="2.8"/></g>
+</svg>
